@@ -2,6 +2,7 @@
 \usepackage{tikz}
 \usepackage{amssymb, amssymb}
 \usepackage{float}
+\usepackage{lua-check-hyphen}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{amsthm}
 \usepackage{thmtools,xpatch}
@@ -17,7 +18,7 @@
 \usepackage{epigraph}
 \usepackage{xargs}
 \usepackage{centernot}
-\usepackage{siunitxj}
+\usepackage{siunitx}
 \usepackage{mathtools}
 
 
@@ -36,6 +37,8 @@ citecolor=TealBlue,
 \usepackage{ifthen}
 \usepackage{answers}
 \usepackage{cancel}
+
+\usepackage{todonotes}
 
 \xpatchcmd{\endmdframed}
 {\aftergroup\endmdf@trivlist\color@endgroup}
@@ -77,7 +80,7 @@ citecolor=TealBlue,
     frametitlerule=true,
     roundcorner=5pt,
     linewidth=1pt,
-    skipabove=25pt,
+    skipabove=15pt,
     skipbelow=2pt,
     frametitlefont=\bfseries,
     innertopmargin=12pt,
@@ -111,3 +114,13 @@ bodyfont=\normalfont
 \numberwithin{section}{chapter}
 \numberwithin{equation}{chapter}
 \setcounter{chapter}{0}
+%%macros
+
+\newcommand{\CC}{\mathbb C}
+\newcommand{\FF}{\mathbb F}
+\newcommand{\NN}{\mathbb N}
+\newcommand{\NNO}{\mathbb N_{\ge 0}}
+\newcommand{\ZZO}{\mathbb Z_{\ge 0}}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\ZZ}{\mathbb Z}

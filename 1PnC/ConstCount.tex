@@ -3,60 +3,76 @@
 I'll begin this book with what we first learnt math as, counting.
 
 \begin{example}
-Cricket t-shirts have 2-digit numbers on them using six possible digits: $0, 1, 2, 3, 4, 5$ How many 
-different t-shirts can be formed?
+Cricket t-shirts have \(2\) digit numbers on them. How many `different' t-shirts can we form 
+using six possible digits, \(0, 1, 2, 3, 4, 5\)? 
 \end{example}
 
 While we can write down all the possible t-shirt numbers and count them, we can do something 
-faster and more beautiful. The first digit can be any of the $6$ given digits, and so can the
- second. As they are completely independent, we can simply multiply them.\par
-So we have $6 \times 6=36$ such T-Shirts.
+faster and much more elegant. The first digit can be any of the \(6\) given digits, 
+and so can the second. As they are completely independent, we can simply multiply them.
+
+So we have $6 \times 6=36$ such T-Shirts. This is the total number of \(2\) digit \emph{combinations}
+we can make using the given numbers.
 
 \begin{example}
-How many $4$ digit numbers can be formed using the digits $1, 2, 3$ and $4$ (Without repetition).
+How many \(4\) digit numbers can we form using the digits \(1, 2, 3\) and \(4\) 
+(Without repetition).
 \end{example}
-
 This question is similar as while we can simply try to write all the numbers and then just count, 
-but it is smarter to do something else.\par
-This means we have $4$ choices for the thousands digit. As one number is now used, we only have
- $3$ choices for the hundreds digit. As two numbers are now used, we have only $2$ choices for 
- the tens digit. With all other numbers used, the last digit will be used as the one's digit, 
- leaving us with only $1$ choice. As all these choices are independent, we say that we can make 
- $4 \times 3 \times 2 \times 1 = 24$\par
+but it is smarter to do something else.
+
+This means we have \(4\) choices for the thousand's digit. As one number is now used, 
+we only have \(3\) choices for the hundred's digit (why?) 
+As two numbers are now used, we have only \(2\) choices for the ten's digit. 
+With all other numbers used, the last digit will be used as the one's digit, leaving us with only 
+\(1\) choice. As all these choices are independent, we say that we can make,
+\[
+    4 \times 3 \times 2 \times 1 = 24
+\]choices.
 Let's explore this new type of counting a bit more.
 
-\section{Fundamental Principle of Counting}
+\section{The Fundamental Principles of Counting}
 
 \begin{example}
-A person can travel from city $A$ to city $B$ via Road (Car/Bus/Bike), Train 
-(Express/Mail) or Flight (Economy/Business). In how many ways can a person go from city A to city B?
+A person can travel from city \(A\) to city \(B\) via Road (Car/Bus/Bike), Train 
+(Express/Mail) or Flight (Economy/Business). 
+In how many ways can a person go from city \(A\) to city \(B\)?
 \end{example}
+Pretty standard, right? We can simply count the ways as {Number of Road ways} \(+\)
+{Number of trains} \(+\) {Number of Flights} \( = 3 + 2 + 2 = 7\). Note that we decided to 
+add here.
 
-Pretty standard, right? We can simply count the ways as $\text{Number of Road ways}
-+\text{Number of trains}+\text{Number of Flights}=3+2+2=7$. Note that we decided to add here.
 \begin{example}
-    A person can travel from city A to city B via Road (Car/Bus/Bike), Train (Express/Mail) or
-     Flight (Economy/Business). He can further travel form city B to city C via Road (Car/Bus/Bike) 
-     and Train (Shatabdi/Express/Mail). In how many ways can a person go from city A to city C via city B?
+    A person can travel from city \(A\) to city \(B\) via Road (Car/Bus/Bike), Train (Express/Mail) or
+     Flight (Economy/Business). He can further travel form city \(B\) to city \(C\) via Road (Car/Bus/Bike) 
+     and Train (Express/Mail). In how many ways can a person go from city \(A\) to city 
+     \(C\) via city \(B\)?
 \end{example}
-Number of Ways to travel from City A to City B are $7$. The ways to travel from City B to City C are 
-$6$ by similar logic.\par
-But as which way we choose after reaching City B doesn't depends on which way we used to actually get 
-there, we can multiply them to get the total ways as $6 \times 7=42$.\par
-The main idea I want you to take here is when do we add and when do we multiply. Here is an exercise 
+Number of Ways to travel from City A to City B are \(7\). The ways to travel from City \(B\) to City \(C\) 
+are \(5\) by similar logic.
+But as which way we choose after reaching City B doesn't depend on which way we used to actually get 
+there, we can multiply them to get the total ways as \(5 \times 7 = 35\).
+
+The main idea I want to give you here is when to add and when to multiply. Here is an exercise 
 for you to check if you got the concept.
+
 \begin{example}
-The Hermetian alphabet consists of only three letters: A, B, and C. 
-A word in this language is an arbitrary sequence of no more than four letters. 
-How many words does the Hermetian language contain?
+    The Hermitian alphabet consists of only three letters: \(A\), \(B\), and \(C\). 
+    A word in this language is an arbitrary sequence of no more than four letters. 
+    How many words does the Hermitian language contain?
 \end{example}
+
 \section{Equivalence}
+
 The definition of what it means to be equal is at heart of counting. For example, 
-lets say I ask a 7 year old how many apples do I have if my mother gave me 2 apples and 
-my father gave me 3 apples and I already had 2 apples to begin with.\par
-We expect the child to count on their fingers and report the answer as 7 apples. 
-But here is my point, I asked the child to count apples, why did the child count their fingers?\par
-The answer is simple, because apples and fingers are equivalent. But that makes no sense.
+let's say I ask a \(7\) year old how many apples do I have if my mother gave me \(2\) apples, 
+my father gave me \(3\) and I already had \(2\) apples to begin with?
+
+We expect the child to count on their fingers and report the answer as \(7\) apples. 
+But the point here is that I asked the child to count apples, why did the child count their fingers?
+
+The answer is simple, because apples and fingers are ``equivalent''. But that makes no sense.
+
 \begin{table}[H]
     \centering
     \begin{tabular}{|p{0.45\linewidth}|p{0.45\linewidth}|}
@@ -78,88 +94,107 @@ The answer is simple, because apples and fingers are equivalent. But that makes 
         \hline
     \end{tabular}
 \end{table}
-or as a less rigorous individual would put it, apple and fingers are different, bruh!\par
-So how did we draw an equivalence?\par
-We said that, mathematically, the additive property of both of them is the same. This means, 
-with respect to this property, sheep and apple and pear are all equal because their addition 
-follows the same set of rules. Although, we don't compare apple to pizza as while we can cleanly 
-give someone $\dfrac{3}{8}$ of a pizza, doing so with the apple is much harder. So if two problems 
-are mathematically equivalent, we can take advantage and do the calculations on the easier to solve
- the easier problem. Here is an example:
+
+Or as a less rigorous individual would put it, apple and fingers are different.
+So how are they equivalent?
+
+We say that, mathematically, the additive property of both of them is the same. This means, 
+with respect to this property, sheep and apple and pear are all equivalent because their addition 
+follows the same set of rules. 
+
+We can take advantage of this equivalence and do the calculations on the easier to solve 
+the more difficult problem. Here is an example,
+
 \begin{example}
-There are $10$ lamps in a hall. Each one of them can be switched on independently.
-The number of ways in which the hall can be illuminated is:    
+There are \(10\) lamps in a hall. Each one of them can be switched on independently.
+Find the number of ways in which the hall can be illuminated.    
 \end{example}
 
 \begin{example}
     Ramin language is a very unique language which has 10 symbols and words are a set of more than one symbol. 
     One word has no repetitions of a symbol and the order of symbols doesn't matter. How many words are in Ramin?
 \end{example}
+Both of these questions ask us the number of way we can choose some subset of \(10\) objects with the size
+(the cardinality) of the subset is not \(0\).
 
-These both questions ask us the number of way we can choose some subset of $10$ objects with the size
-(also called cardinality) of the subset is not $0$. However, 
-the first question is much easier to understand as the lamp question as 
-its obvious there that each lamp is either on or off, so we have $2^{10}$ configurations. 
+However, the first question is much easier to understand as the lamp question as 
+its obvious there that each lamp is either on or off, so we have \(2^{10}\) configurations. 
 As the hall is illuminated, all lamps are off condition is to be removed, so our answer to 
-both the questions is $2^{10}-1$.\par
+both the questions is \(2^{10}-1\).
+
 We'll explore this idea further in this chapter as well as in a lot more detail as 
-double counting(in chapter 5) and bijections(in chapter 7). Let's now formalize what we learnt till here.
+double counting (\Cref{ch: powerup}) and bijections (in chapter 7). Let's now formalize what we learnt till here.
+
+\todo[inline]{Cref chapter with bijections. Add appendix with set theory.}
+
 \section{The special sign!}
-Normally when you see a ! sign in a book, it refers to the author trying to be funny. 
-But if it comes after a number it means as follows:
+Normally when you see a ``!'' sign in a book, it refers to the author trying to be funny. 
+But if it comes after a number it means as follows,
 
 \begin{definition}
     [Factorial]
-    $n!=$ Number of way to arrange $n$ distinct objects in a straight line.
+    For \(n \in \ZZO\),
+    \(n!\) is the number of way to arrange \(n\) distinct objects in a straight line.
 \end{definition}
 
-This means that by the definition of factorial the example about number of $4$ digit numbers which can be made with $1,2,3,4$ without repetition can be answered simply as $4!=24$.\par
+\noindent This means that by the definition of factorial, the example about number of \(4\) digit numbers 
+which can be made with \(1,2,3,4\) without repetition can be answered simply as \(4!=24\).
+
 \begin{theorem}
-    $n!=n\times (n-1)\times \dots 3\times 2 \times 1 \implies n!=n \times (n-1)!$
+    \(n! = n \cdot (n-1) \cdot \dots \cdot 3 \cdot 2 \cdot 1 \iff n != n(n-1)!\)
 \end{theorem}
+
 \begin{theorem}
     [Vacuous Truth]
-    $0!=1$
+    \(0!=1\)
 \end{theorem}
+
 What is vacuous truth? A truth which is true as it being false would make life difficult. 
 This is not the actual definition of the word, but I am avoiding the glaring landmine called 
 mathematical philosophy. The reason for including this is you'll find a lot of bad proofs of 
 the same which challenge the definition of factorial. Any proof of this is ill motivated and 
-wrong despite what it may seem.\par
-The most common one is $1!=1=1*0! \implies 0!=1$ which is false as $0!=0*(-1)!=0$ is contradictory. 
-This is defined much better by the real analysis definition of this, aka the famous $\Gamma$(Gamma) function. 
+wrong despite what it may seem.
+
+The most common one is \(1!=1=1 \cdot 0! \implies 0!=1\) which is false as \(0! = 0 \cdot (-1) !=0 \) is contradictory.
+
+This is defined much better by the real analysis definition of this, aka the famous \(\Gamma\)(Gamma) function. 
 However, we shall not discuss this in this book as real analysis is outside the scope of
-olympiads.\par
+olympiads. We shall only concern ourselves with the factorial of non-negative integers.
+
 Let's now come back to the topic at hand.
+
 \begin{example}
-For a three digit number $\overline{ABC} = A!+B!+C!$. Find $A+B+c$.
+For a three digit number \(\overline{ABC} = A!+B!+C!\). Find \(A+B+C\).
 \end{example}
+
 \begin{proof}
     [Solution]
     I had asked this question to Aparna ma'am when I was in 8th grade. After trying to solve it algebraically, 
     I gave up. Ma'am solved it very quickly by trial and error. It felt like cheating for a long time, 
-    till I realized that a lot of math, especially at research level, is reducing the noise and then doing 
-    trial and error. I like to call it 'The art of Trial and Error'.\par
-    For this question, we need to remember the values of first $7-8$ factorials. 
-    That will happen with practice and repetition.
-    \begin{table}
-        \centering
-        \begin{tabular}{cc}
-            0!= & 1\\
-            1!=& 1 \\
-            2!=& 2\\
-             3!=& 6\\
-             4! & 24\\
-             5! & 120\\
-             6! & 720\\
-             7! & 5040\\
-             8!= & 40320\\
-             9!= & 362880\\
-    \end{tabular}
-    \end{table}
-    We need to note that our number can obviously not have any number greater than $6$ as it is a
-    three digit number. Better yet, we can remove $6$ from the pool as adding anything to $720$ will 
-    automatically give us a $7,8,9$ in the number which is not possible.\par
+    until I realized that a lot of math, especially at research level, is reducing the noise and then doing 
+    trial and error. Trial and error is not a substitute for actual solutions, but it does
+    help in gaining intuition for the actual solution. Remember, that is only an aid and not a tool.
+
+    For this question, we need to remember the values of first \(7-8\) factorials. 
+    That will happen naturally with practice and repetition.
+    
+    \begin{align*}
+        0! &= 1\\
+        1! &= 1 \\
+        2! &= 2\\
+        3! &= 6\\
+        4! &= 24\\
+        5! &= 120\\
+        6! &= 720\\
+        7! &= 5040\\
+        8! &= 40320\\
+        9! &= 362880
+    \end{align*}
+
+    We need to note that our number can obviously not have any digit greater than \(6\) as it is a
+    three-digit number. Better yet, we can remove \(6\) from the pool as adding any factorial to \(720\) will 
+    automatically give us a \(7,8,9\) in the number which is not possible.
+
     This forces us to have a $5$ in the number as if we don't have a $5!=120$, we can't have a three 
     digit number. This is true as $4!+4!+4!=72$ which is not a three digit number.\par
     Here, we will try to determine the number of $5$'s in $\overline{ABC}$. If all three are $5$, 
@@ -454,3 +489,4 @@ fair.\par
 \item \points{2} Slips of paper with the numbers from 1 to 99 are placed in a hat. Five numbers are randomly drawn out of the hat one at a time (without replacement). What is the probability that the numbers are chosen in increasing order?
 \end{enumerate}
 \end{xcb}
+
