@@ -21,7 +21,6 @@
 \usepackage{siunitx}
 \usepackage{mathtools}
 
-
 \usepackage[linktoc=page]{hyperref}
 \hypersetup{
 colorlinks=true,
@@ -29,9 +28,10 @@ linkcolor=TealBlue!70!black,
 citecolor=TealBlue,
 }
 \usepackage{cleveref}
-
-\usepackage{natbib}
+\usepackage{enumitem}
+\usepackage[citestyle=alphabetic]{biblatex}
 \usepackage{forloop}
+\usepackage{etoolbox}
 \usepackage{pgfmath}
 \usepackage{etoolbox}
 \usepackage{ifthen}
@@ -39,6 +39,9 @@ citecolor=TealBlue,
 \usepackage{cancel}
 
 \usepackage{todonotes}
+
+\newlist{exc}{enumerate}{10}
+\setlist[exc]{label=\textbf{\sffamily Q.\,\arabic*.},ref=exc\arabic*,leftmargin=*}
 
 \xpatchcmd{\endmdframed}
 {\aftergroup\endmdf@trivlist\color@endgroup}
@@ -124,3 +127,7 @@ bodyfont=\normalfont
 \newcommand{\QQ}{\mathbb Q}
 \newcommand{\RR}{\mathbb R}
 \newcommand{\ZZ}{\mathbb Z}
+
+
+\usepackage{parskip}
+\raggedbottom

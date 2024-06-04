@@ -16,8 +16,9 @@ we can make using the given numbers.
 
 \begin{example}
 How many \(4\) digit numbers can we form using the digits \(1, 2, 3\) and \(4\) 
-(Without repetition).
+(Without repetition)?
 \end{example}
+
 This question is similar as while we can simply try to write all the numbers and then just count, 
 but it is smarter to do something else.
 
@@ -133,11 +134,9 @@ But if it comes after a number it means as follows,
 
 \begin{definition}
     [Factorial]
-    For \(n \in \ZZO\),
-    \(n!\) is the number of way to arrange \(n\) distinct objects in a straight line.
+    \(n!\) is the number of ways to order a set of \(n\) elements.
 \end{definition}
-
-\noindent This means that by the definition of factorial, the example about number of \(4\) digit numbers 
+This means that by the definition of factorial, the example about number of \(4\) digit numbers 
 which can be made with \(1,2,3,4\) without repetition can be answered simply as \(4!=24\).
 
 \begin{theorem}
@@ -156,6 +155,11 @@ the same which challenge the definition of factorial. Any proof of this is ill m
 wrong despite what it may seem.
 
 The most common one is \(1!=1=1 \cdot 0! \implies 0!=1\) which is false as \(0! = 0 \cdot (-1) !=0 \) is contradictory.
+Well, it is not so much so as false as it is a strawman. This pattern, which 
+by the way, works for \(n \in \ZZO\), since that is perfectly defined from our definition, 
+breaks for negative integers and even further, real numbers. It is not so much as true, 
+as it is convenient, it is possible to formulate \(0! = 0\) but if it is a good idea is another 
+thing.
 
 This is defined much better by the real analysis definition of this, aka the famous \(\Gamma\)(Gamma) function. 
 However, we shall not discuss this in this book as real analysis is outside the scope of
@@ -173,7 +177,7 @@ For a three digit number \(\overline{ABC} = A!+B!+C!\). Find \(A+B+C\).
     I gave up. Ma'am solved it very quickly by trial and error. It felt like cheating for a long time, 
     until I realized that a lot of math, especially at research level, is reducing the noise and then doing 
     trial and error. Trial and error is not a substitute for actual solutions, but it does
-    help in gaining intuition for the actual solution. Remember, that is only an aid and not a tool.
+    help in reducing the noise for the actual solution. Remember, that is only an aid and not a tool.
 
     For this question, we need to remember the values of first \(7-8\) factorials. 
     That will happen naturally with practice and repetition.
@@ -195,14 +199,17 @@ For a three digit number \(\overline{ABC} = A!+B!+C!\). Find \(A+B+C\).
     three-digit number. Better yet, we can remove \(6\) from the pool as adding any factorial to \(720\) will 
     automatically give us a \(7,8,9\) in the number which is not possible.
 
-    This forces us to have a $5$ in the number as if we don't have a $5!=120$, we can't have a three 
-    digit number. This is true as $4!+4!+4!=72$ which is not a three digit number.\par
-    Here, we will try to determine the number of $5$'s in $\overline{ABC}$. If all three are $5$, 
-    we have $555=360$ which is false.\par
-    If we have 2 $5$'s, the number will also have a $2$ as $5!+5!=240$. This implies $5!+5!+2!=242=255$ 
-    which is false.\par
-    This means we have only one $5$. This also means we have a $1$ in $\overline{ABC}$. Next, we 
-    can do trial error on $0,4$.\par
+    This forces us to have a \(5\) in the number as if we don't have a \(5!=120\), we can't have a three 
+    digit number. This is true as \(4!+4!+4!=72\) which is not a three digit number.
+
+    Here, we will try to determine the number of \(5\)'s in \(\overline{ABC}\). 
+    If all three are \(5\), we have \(555=360\) which is false.
+
+    If we have two \(5\)'s, the number will also have a \(2\) as \(5!+5!=240\). 
+    This implies \(5!+5!+2!=242=255\) which is false.
+
+    This means we have only one \(5\). Which also means we have a \(1\) in \(\overline{ABC}\). 
+    Next, we can do trial error on \(0,4\).
     \begin{align*}
         1!+5!+0! & = 122 & \false \\
         1!+5!+1! & = 122 & \false \\
@@ -210,42 +217,56 @@ For a three digit number \(\overline{ABC} = A!+B!+C!\). Find \(A+B+C\).
         1!+5!+3! & = 127 & \false \\
         1!+5!+4! & = 145 & \true \\
     \end{align*}
-    Thus, the $\overline{ABC}=145$. Thus, $A+B+C=1+4+5=10$.
+    Thus, the \(\overline{ABC}=145\). Thus, \(A+B+C=1+4+5=10\).
 \end{proof}
 \section{Criminal Lineups}
-If we have $5$ suspects lined up, we can arrange them in $5!=120$ ways. But if $2$ of them are wearing squid 
-game masks them? Now they are identical and hence interchangeable. The ways to arrange them now will be halved 
-as they both being switched doesn't create a new permutation.\par
+
+If we have \(5\) suspects lined up, we can arrange them in \(5!=120\) ways. 
+But if \(2\) of them are wearing squid game masks them? 
+Now they are identical and hence interchangeable. The ways to arrange them now will be halved 
+as they both being switched doesn't create a new permutation.
+
 Now what if the reaming three of them wear Joker masks. We'll have to divide the permutations by $3!=6$ as all 
 of them are identical. This can obviously be generalized to:
+
 \begin{theorem}
-When arranging a total of $a$ objects, where there are groups of identical objects denoted by $k, l, m, n$, etc., the number of distinct arrangements is given by dividing the factorial of the total number of objects ($a!$) by the product of the factorials of the counts of each group of identical objects ($k!, l!, m!, n!$, etc.).
+When arranging a total of \(a\) objects, where there are groups of identical objects denoted by 
+\(k, l, m, n\), etc., the number of distinct arrangements is given by 
+
+\[\frac{a!}{k! \cdot l! \cdot n! \cdot m!}\]
+
 \end{theorem}
+
 Let's try to understand this more clearly through an example.
+
 \begin{example}
-    How many ways can the letters of the word '$AGARWAL$' be arranged?
+    How many ways can the letters of the word `AGARWAL' be arranged?
 \end{example}
 \begin{proof}
     [Solution]
     My surname has $3$ A's and $4$ distinct letters. Let's consider the A's distinct as $A_1,A_2,A_3$. 
     Then we have, $7!$ arrangements. However, the A' s are not distinct. Thus, the arrangement of 
     A's doesn't matter. We have $3!$ arrangement of A's. Thus, we can divide it from the total to get the 
-    actual number of total arrangements.\par
-    Thus, the answer is $\frac{7!}{3!}$
+    actual number of total arrangements.
+
+    Thus, the answer is $\dfrac{7!}{3!}$.
 \end{proof}
-The above question comes regularly in collage entrance exams. A better question type which 
-also can be found on collage entrances is:
+The above question comes regularly in college entrance exams. A better question type which 
+also can be found on college entrances is:
 \begin{example}
-    Using all the letters $M, O, P, R,$ and $X$, we can form five-letter ”words”. 
-    If these ”words” are arranged in alphabetical order, then what position does the ”word” $PRMOX$ occupy?
+    Using all the letters $M, O, P, R,$ and $X$, we can form five-letter ``words''. 
+    If these ``words'' are arranged in alphabetical order, then what position does the ``word'' 
+    $PRMOX$ occupy?
 \end{example}
 \begin{proof}
     [Solution]
-    We can first look at all words starting with letter $M$ which is alphabetically the first.\par
-    There are $4!$ such words. Similarly for $O$ brigs the total to $48$\par
-    In words staring with $P$ we first look at words which start with $PM$ which we have $3!$ of. Then $PO$.\par
-    This brings the total count to $48+12=60$\par
-    $PRMOx$ is the $61$st word as after $PR$ the rest of the letters are in 
+    We can first look at all words starting with letter $M$ which is alphabetically the first.
+    There are $4!$ such words. Similarly for $O$ brigs the total to $48$.
+
+    In words staring with $P$ we first look at words which start with $PM$ which we have $3!$ of. Then $PO$.
+    This brings the total count to $48+12=60$.
+    
+    $PRMOX$ is the $61$st word as after $PR$ the rest of the letters are in 
     alphabetically order and hence, it is the very next word.
 \end{proof}
 We can, without much avail, try to make these questions look more difficult by having repeat letters. 
